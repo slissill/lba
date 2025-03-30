@@ -4,3 +4,20 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('helloworld', views.helloworld, name='helloworld'),
 ]
+
+'''
+************************************************************
+******* VENV ***********************************************
+************************************************************
+
+C:\ZLOCAL\VENV\SCRIPTS\activate.ps1
+CD C:\ZLOCAL\lba\
+python manage.py runserver'
+
+
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+
+'''
