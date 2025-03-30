@@ -12,8 +12,10 @@ urlpatterns = [
 
 C:\ZLOCAL\VENV\SCRIPTS\activate.ps1
 CD C:\ZLOCAL\lba\
-python manage.py runserver'
+python manage.py runserver
 
+
+C:\ZDEPOT\VENV\SCRIPTS\deactivate
 
 
 pip freeze > requirements.txt
