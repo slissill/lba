@@ -75,11 +75,15 @@ WSGI_APPLICATION = 'root.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'lba',
+            'USER': 'root',
+            'PASSWORD': 'admin',
+            'HOST': 'localhost',
+            'PORT': '',             # Laissez vide pour utiliser le port par défaut (3306)
+            }
+        }
 
 
 # Password validation
