@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 3px; }
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>Album</h1>
+
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Durée</th>
+            <!-- <th>Écouter sur spotify</th> -->
+            <th>Écouter</th>
+        </tr>
+        
+        {% for track in tracks %}
+        <tr>
+            <td>{{ track.name }}</td>
+            <td>{{ track.duration_ms }}</td>
+            <!-- <td><a href="https://open.spotify.com/track/{{ track.id }}" target="_blank">Écouter sur Spotify 🎵</a></td> -->
+            <td><a href="#" class="track-link" data-track-id="{{ track.id }}">Play it</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+    
+    <iframe 
+        id="spotify-player" 
+        src="https://open.spotify.com/embed/track/" 
+        width="300" 
+        height="80" 
+        frameborder="0" 
+        allowtransparency="true" 
+        allow="encrypted-media"
+        >
+    </iframe>
+
+    <script>
+        document.querySelectorAll(".track-link").forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();  // Empêcher l'action par défaut du lien
+
+                var trackId = this.getAttribute("data-track-id");
+                var iframe = document.getElementById("spotify-player");
+                iframe.src = "https://open.spotify.com/embed/track/" + trackId;
+
+                // iframe.src = "https://open.spotify.com/embed/track/" + trackId + "?autoplay=1";
+                // document.querySelector('[title="Play"]');
+
+                
+            });
+        });
+    </script>
+
+
+</body>
+</html>

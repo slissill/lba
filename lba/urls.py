@@ -1,9 +1,17 @@
 from django.urls import path
 from . import views
+
+
+app_name = "lba"
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('helloworld', views.helloworld, name='helloworld'),
+    path('artist/<str:artist_name>/', views.artist, name='artist'),    
+    path('album/<str:album_id>/', views.album, name='album'),    
 ]
+
+
 
 '''
 ************************************************************

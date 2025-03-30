@@ -2,3 +2,4 @@
 .env
 Analyse/
 .vscode/
+.cache

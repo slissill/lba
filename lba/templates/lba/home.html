@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Acceuil</title>
+
+    <style>
+        table {            
+            border-collapse: collapse;
+            width: 50%;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: left;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>INDEX</h1>
+    
+    <a href="{% url 'admin:index' %}" class="position-absolute top-0 end-0 m-2 text-muted small">
+        Admin
+    </a>
+
+    <h1>Page d'Accueil</h1>
+    
+    <h2>Artistes</h2>
+
+    <table>    
+    {% for artist in artists %}
+    <tr>
+        <td>
+            <a href="{% url 'lba:artist' artist.name %}">{{ artist.name }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
 </body>
 </html>
