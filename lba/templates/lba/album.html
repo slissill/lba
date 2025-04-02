@@ -28,7 +28,7 @@
         
         {% for track in tracks %}
         <tr>
-            <td>{{ track.name }}</td>
+            <td style="text-align: left;">{{ track.name }}</td>
             <td>{{ track.duration_ms }}</td>
             <!-- <td><a href="https://open.spotify.com/track/{{ track.id }}" target="_blank">Écouter sur Spotify 🎵</a></td> -->
             <td><a href="#" class="track-link" data-track-id="{{ track.id }}">Play it</a></td>
